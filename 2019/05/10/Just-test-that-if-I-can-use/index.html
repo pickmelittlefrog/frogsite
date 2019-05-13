@@ -79,7 +79,7 @@
         
 
         
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开始使用"><span class="toc-number">1.</span> <span class="toc-text">开始使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">1.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#建站"><span class="toc-number">1.2.</span> <span class="toc-text">建站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置"><span class="toc-number">1.3.</span> <span class="toc-text">配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本操作"><span class="toc-number">2.</span> <span class="toc-text">基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#资源文件夹"><span class="toc-number">2.1.</span> <span class="toc-text">资源文件夹</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#开始使用"><span class="toc-number">1.</span> <span class="toc-text">开始使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">1.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#建站"><span class="toc-number">1.2.</span> <span class="toc-text">建站</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置"><span class="toc-number">1.3.</span> <span class="toc-text">配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本操作"><span class="toc-number">2.</span> <span class="toc-text">基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#资源文件夹"><span class="toc-number">2.1.</span> <span class="toc-text">资源文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Front-matter"><span class="toc-number">2.2.</span> <span class="toc-text">Front-matter</span></a></li></ol></li></ol>
         
     </div>
 </aside>
@@ -266,7 +266,17 @@
 <p>通过这种方式，图片将会同时出现在文章和主页以及归档页中。</p>
 </blockquote>
 <p>将上面的example.jpg换成你自己的图片路径就可以啦！”This is an example image”部分的话，则是起到了图片html属性中title的作用。总之，和官方文档内采用相同的方式即可。</p>
-
+<h3 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a><a href="https://hexo.io/zh-cn/docs/front-matter" target="_blank" rel="noopener">Front-matter</a></h3><p>在设置tag页面布局的时候也遇到了一些小问题，主要是因为自己选择的<a href="https://sanonz.github.io/2017/hello-world/" target="_blank" rel="noopener">concise</a> <a href="https://hexo.io/zh-cn/docs/themes" target="_blank" rel="noopener">主题</a>和别人家的配置有点不同。如果你也用的是concise，就一起来看看吧。</p>
+<p>首先和其他主题相同的是，先使用命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>接下来打开你的根目录里的source/tags，打开index.md进行编辑：</p>
+<blockquote>
+<p>---</p>
+<p>layout: tags<br>title: “标签”<br>date: 2019-05-11 17:56:42<br>type: “tags”</p>
+<p>---</p>
+</blockquote>
+<p>改成上面这样就可以了，date以及title都不影响，layout可以让你当前的页面变成主题设计者所设计的tags布局（打开后呈现标签，但标题不随你的title变化，固定显示为TAG，算是这个主题的一个bug吧），而type则帮助你在点击菜单栏的标签（即tags）后可以跳转到tags，而且能够帮助你读取到source/tags文件夹下的内容~（个人理解，有错误请指正）</p>
+<img src="/2019/05/10/Just-test-that-if-I-can-use/tags.png" title="大功告成">
         
     </section>
 </article>
